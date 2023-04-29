@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oxford-Dictonary</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+	<h1><center>Oxford Dictionary Application</center></h1>
+	<br><br><br><br>
+
+<form class="example" action="word" method='POST' style="margin:auto;max-width:500px">
+	{% csrf_token %}
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+
+<br><br><br><br>
+<div  style="max-width:900px">
+<center>
+<table >
+<center> 
+<tr>
+	 <td><h3>Word :</h3></td>  <td><h3>{{search}}</td></h3>
+</tr>
+
+<tr>
+	<td><h3>Meaning :</h3></td> <td><h3>{{meaning}}</h3></td>
+</tr>
+<tr>
+	<td><h3>Translate: </h3></td> <td><h3>{{translate}}</h3></td>
+</tr>
+<tr>
+	{% for i in synonyms%}
+	<td><h3>Synonyms</h3></td>: <h3><td>{{i}}
+	{% endfor %}</h3></td></tr>
+
+<tr>
+{%for j in antonyms %}
+<td><h3>Antonym:</h3></td> <td><h3>{{j}}</h3></td>
+{% endfor %}
+</tr>
+</center>
+</table>
+</center>
+</div>
+</body>
+</html> 
