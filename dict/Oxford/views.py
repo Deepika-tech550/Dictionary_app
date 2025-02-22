@@ -5,7 +5,7 @@ def home(request):
 	return render(request,'index.html',{'name':'Deepika'})
 
 def word(request):
-	if requset.method=='POST':
+	if request.method=='POST':
 		search=request.POST['search2']
 		dictionary= PyDictionary()
 		meaning= dictionary.meaning(search)
