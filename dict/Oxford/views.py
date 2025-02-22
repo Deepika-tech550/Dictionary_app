@@ -4,7 +4,7 @@ from PyDictionary import PyDictionary
 def home(request):
 	return render(request,'index.html',{'name':'Deepika'})
 
-def word(requset):
+def word(request):
 	if requset.method=='POST':
 		search=request.POST['search2']
 		dictionary= PyDictionary()
