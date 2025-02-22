@@ -15,7 +15,7 @@ def word(request):
 		#synonyms= dictionary.synonym(search)
 		#antonyms=dictionary.antonym(search)
 		translate= translator.translate(search,'ta')
-		context={'search':search,'meaning':meaning['Noun'][0],'translate':translate}
+		context={'search':search,'translate':translate}
 		print(search)
 		return render(request,'index.html',context)
 	else:
