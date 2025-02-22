@@ -1,5 +1,5 @@
 from django.shortcuts import render
-#from PyDictionary import PyDictionary
+##from PyDictionary import PyDictionary
 from AyDictionary import AyDictionary
 from googletrans import Translator
 # Create your views here.
