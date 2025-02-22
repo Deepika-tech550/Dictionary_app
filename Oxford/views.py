@@ -8,6 +8,7 @@ def word(requset):
 	if requset.method=='POST':
 		search=requset.POST['search2']
 		dictionary= PyDictionary()
+		translator = Translator()
 		meaning= dictionary.meaning(search)
 		synonyms= dictionary.synonym(search)
 		antonyms=dictionary.antonym(search)
