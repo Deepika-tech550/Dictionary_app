@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from PyDictionary import PyDictionary
+from pydictionary import Dictionary
 # Create your views here.
 def home(requset):
 	return render(requset,'index.html',{'name':'Deepika'})
@@ -7,7 +7,7 @@ def home(requset):
 def word(requset):
 	if requset.method=='POST':
 		search=requset.POST['search2']
-		dictionary= PyDictionary()
+		dictionary= Dictionary()
 		meaning= dictionary.meaning(search)
 		synonyms= dictionary.synonym(search)
 		antonyms=dictionary.antonym(search)
