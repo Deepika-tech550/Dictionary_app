@@ -10,6 +10,7 @@ def word(request):
 	if request.method=='POST':
 		search=request.POST['search2']
 		dictionary= AyDictionary()
+		translator = Translator()
 		meaning= dictionary.meaning(search)
 		#synonyms= dictionary.synonym(search)
 		#antonyms=dictionary.antonym(search)
