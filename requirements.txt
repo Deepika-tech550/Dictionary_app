@@ -1,5 +1,4 @@
-Django
-tzdata
-PyDictionary
-AyDictionary 
-googletrans==4.0.0-rc1
+django
+AyDictionary==0.0.4
+googletrans==4.0.2
+

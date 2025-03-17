@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: django-deployment
+  name: translator-new-deployment
   labels:
     app: django
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: django
@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: django-cnt
-        image: itdeepikar747/translator-app:latest
+        image: itdeepikar747/translator-app:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8000
+     
 

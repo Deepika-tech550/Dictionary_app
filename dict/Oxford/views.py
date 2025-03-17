@@ -1,6 +1,6 @@
 from django.shortcuts import render
 ##from PyDictionary import PyDictionary
-from AyDictionary import AyDictionary
+#from AyDictionary import AyDictionary
 from googletrans import Translator
 # Create your views here.
 def home(request):
@@ -9,9 +9,9 @@ def home(request):
 def word(request):
 	if request.method=='POST':
 		search=request.POST['search2']
-		dictionary= AyDictionary()
+		#dictionary= AyDictionary()
 		translator = Translator()
-		meaning= dictionary.meaning(search)
+		#meaning= dictionary.meaning(search)
 		#synonyms= dictionary.synonym(search)
 		#antonyms=dictionary.antonym(search)
 		translate= translator.translate(search,'ta')
