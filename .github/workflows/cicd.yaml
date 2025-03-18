@@ -71,6 +71,6 @@ jobs:
       run: |
         git config --global user.email "rdeepi1212@gmail.com"
         git config --global user.name "Deepika-tech550"
-        git add helm/django-app-chart/values.yaml
+        git add django-app-chart/values.yaml
         git commit -m "Update tag in Helm chart"
         git push
