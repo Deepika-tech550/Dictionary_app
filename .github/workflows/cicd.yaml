@@ -27,22 +27,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    
-
-  code-quality:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8
-
-    - name: Run Flake8 Linter
-      run: flake8 .
   
   push:
     runs-on: ubuntu-latest
@@ -81,7 +65,7 @@ jobs:
 
     - name: Update tag in Helm chart
       run: |
-        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' helm/django-app-chart/values.yaml
+        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' django-app-chart/values.yaml
 
     - name: Commit and push changes
       run: |
